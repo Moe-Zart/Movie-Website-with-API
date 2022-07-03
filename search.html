@@ -6,20 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cinebreeze</title>
     <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header class="nav-bar">
-      <div class="nav-contents">
+    <header class="nav-bar search">
+      <div class="nav-contents nav-contents-search">
         <figure class="logo-contents">
           <img class="logo" src="./assets/Cinebreeze colour.png" alt="" />
-          <h1 class="logo-text">Cinebreeze</h1>
+          <h1 class="logo-text logo-text-search">Cinebreeze</h1>
         </figure>
         <ul class="links">
-          <li class="link"><a href="#">Home</a></li>
-          <li class="link"><a href="./search.html">Search</a></li>
-          <li class="link"><a href="#">Contact</a></li>
+          <li class="link">
+            <a class="search-link" href="./index.html">Home</a>
+          </li>
+          <li class="link">
+            <a class="search-link" href="./search.html">Search</a>
+          </li>
+          <li class="link"><a class="search-link" href="#">Contact</a></li>
         </ul>
       </div>
+      <div class="browse">
+        <h2 class="subtitle search-subtitle">Browse our Films</h2>
+        <form class="input-wrapper" action="">
+          <input class="search-input" type="text" placeholder="Search by Title, Year or Actors" />
+          <a href="#"
+            ><button class="search-button"><i class="fas fa-search"></i></button
+          ></a>
+        </form>
+      </div>
+      <div class="overlay"></div>
     </header>
   </body>
 </html>
