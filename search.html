@@ -35,7 +35,7 @@
           <input
             class="search-input"
             type="text"
-            placeholder="Search by Title, Year or Actors"
+            placeholder="Search Any Movie Or Series" oninput="OnSearchChange(event)" onsubmit="OnSearchChange(event)"
           />
           <a href="#"
             ><button class="search-button"><i class="fas fa-search"></i></button
@@ -49,9 +49,7 @@
       <section id="main-page">
         <div class="row-search">
           <div class="filters-search"></div>
-          <div class="films-list">
-            
-          </div>
+          <div class="films-list"></div>
         </div>
       </section>
     </main>

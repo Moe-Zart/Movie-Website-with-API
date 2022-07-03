@@ -129,6 +129,7 @@ button {
   position: relative;
   height: 100%;
   background-color: #a53e45;
+  background: linear-gradient(#f3525d,rgb(0, 0, 0));
   opacity: 0.9;
   padding-bottom: 40px;
   align-items: center;

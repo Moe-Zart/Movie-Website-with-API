@@ -46,6 +46,38 @@ async function renderFilms() {
   ).join("");
   const filmList = document.querySelector(".films-list");
   filmList.innerHTML = filmsDataHTML;
-  console.log(filmsData);
 }
 renderFilms();
+
+async function OnSearchChange(event){
+        const id = event.target.value
+
+    const films = await fetch(
+        `https:www.omdbapi.com/?apikey=3d6ecfb9&s=${id}`
+      );
+      const filmsData = await films.json();
+      const filmsDataHTML = filmsData.Search.map(
+        (film) =>
+          `<div class="film-wrapper">
+        <figure class="film-poster-wrapper">
+          <img
+            class="film-poster"
+            src="${film.Poster}"
+            alt=""
+          />
+          <i class="fas fa-play-circle"></i>
+        </figure>
+        <div class="film-info">
+          <h3 class="film-title">${film.Title}</h3>
+          <div class="film-details">
+            <p class="film-year">${film.Year}</p>
+            <p class="film-type">${film.Type}</p>
+          </div>
+        </div>
+      </div>`
+      ).join("");
+      const filmList = document.querySelector(".films-list");
+      filmList.innerHTML = filmsDataHTML;
+      
+}
+OnSearchChange()
