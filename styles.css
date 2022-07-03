@@ -21,7 +21,7 @@ h2 {
   text-align: center;
   color: #3f3d55;
 }
-h3{
+h3 {
   font-size: 16px;
 }
 form {
@@ -189,44 +189,44 @@ button {
   right: 0;
   z-index: -1;
 }
-.filters-search{
-height: 140px;
-width: 100%;
+.filters-search {
+  height: 140px;
+  width: 100%;
 }
-.films-list{
+.films-list {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-evenly;
 }
-.film-wrapper{
-margin: 0 12px 16px;
-flex: 1;
+.film-wrapper {
+  margin: 0 12px 16px;
+  flex: 1;
+  min-width: calc(100%/4);
 }
-.film-poster-wrapper{
+.film-poster-wrapper {
   height: 460px;
   position: relative;
   z-index: -1;
   overflow: hidden;
 }
-.film-poster{
+.film-poster {
   width: 100%;
   position: absolute;
 }
-.film-info{
+.film-info {
   background-color: white;
 }
-.film-details{
+.film-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
 }
-.film-title{
+.film-title {
   white-space: nowrap;
-
 }
-.film-type{
+.film-type {
   border: 1px #3f3d55 solid;
   border-radius: 4px;
   padding: 1px 2px;
