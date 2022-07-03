@@ -25,14 +25,15 @@ async function renderFilms() {
   );
   const filmsData = await films.json();
   const filmsDataHTML = filmsData.Search.map(
-      (film) =>
-        `<div class="film-wrapper">
+    (film) =>
+      `<div class="film-wrapper">
     <figure class="film-poster-wrapper">
       <img
         class="film-poster"
         src="${film.Poster}"
         alt=""
       />
+      <i class="fas fa-play-circle"></i>
     </figure>
     <div class="film-info">
       <h3 class="film-title">${film.Title}</h3>
@@ -42,10 +43,9 @@ async function renderFilms() {
       </div>
     </div>
   </div>`
-    )
-    .join("");
+  ).join("");
   const filmList = document.querySelector(".films-list");
   filmList.innerHTML = filmsDataHTML;
-  console.log(filmsData)
+  console.log(filmsData);
 }
 renderFilms();
