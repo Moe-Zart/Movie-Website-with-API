@@ -19,11 +19,19 @@
             </div>
             */
 
-async function renderFilms() {
+async function renderFilms(targetValue) { //note: the targetValue is only for the sort
   const films = await fetch(
     "https:www.omdbapi.com/?apikey=3d6ecfb9&s=%22here%22"
   );
   const filmsData = await films.json();
+  //Sort by year v
+  if (targetValue === "Newest") {
+    filmsData.Search.sort((a,b)=>b.Year - a.Year)
+  }
+  else if(targetValue=== "Oldest"){
+    filmsData.Search.sort((a,b)=>a.Year - b.Year)
+  }
+  //Sort by year ^
   const filmsDataHTML = filmsData.Search.map(
     (film) =>
       `<div class="film-wrapper">
@@ -46,12 +54,12 @@ async function renderFilms() {
   ).join("");
   const filmList = document.querySelector(".films-list");
   filmList.innerHTML = filmsDataHTML;
+ 
 }
 renderFilms();
 
 async function OnSearchChange(event) {
   const id = event.target.value;
-
   const films = await fetch(`https:www.omdbapi.com/?apikey=3d6ecfb9&s=${id}`);
   const filmsData = await films.json();
   const filmsDataHTML = filmsData.Search.map(
@@ -76,10 +84,9 @@ async function OnSearchChange(event) {
   ).join("");
   const filmList = document.querySelector(".films-list");
   filmList.innerHTML = filmsDataHTML;
+  console.log(event.target.value)
 }
-OnSearchChange();
 
-function sortNewest() {
-  
+function filterFilms(event) {
+  renderFilms(event.target.value);
 }
-sortNewest();

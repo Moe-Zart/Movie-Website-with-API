@@ -31,28 +31,27 @@
       </div>
       <div class="browse">
         <h2 class="subtitle search-subtitle">Browse our Films</h2>
-        <form class="input-wrapper" action="">
+        <form onsubmit="return false" class="input-wrapper" onchange="OnSearchChange(event)">
           <input
             class="search-input"
             type="text"
-            placeholder="Search Any Movie Or Series" oninput="OnSearchChange(event)" onsubmit="OnSearchChange(event)"
+            placeholder="Search Any Movie Or Series"
           />
-          <a href="#"
-            ><button class="search-button"><i class="fas fa-search"></i></button
-          ></a>
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
         </form>
       </div>
       <div class="overlay"></div>
     </header>
     <div class="loading-bar"></div>
     <main>
-
       <section id="main-page">
         <div class="row-search">
           <div class="filters-search">
-            <select name="" id="filter">
+            <select name="" id="filter" onchange="filterFilms(event)">
               <option value="" disabled selected>Sort by</option>
-              <option value="Newest" onclick="sortNewest()">Newest</option>
+              <option value="Newest">Newest</option>
               <option value="Oldest">Oldest</option>
             </select>
           </div>
