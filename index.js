@@ -49,16 +49,14 @@ async function renderFilms() {
 }
 renderFilms();
 
-async function OnSearchChange(event){
-        const id = event.target.value
+async function OnSearchChange(event) {
+  const id = event.target.value;
 
-    const films = await fetch(
-        `https:www.omdbapi.com/?apikey=3d6ecfb9&s=${id}`
-      );
-      const filmsData = await films.json();
-      const filmsDataHTML = filmsData.Search.map(
-        (film) =>
-          `<div class="film-wrapper">
+  const films = await fetch(`https:www.omdbapi.com/?apikey=3d6ecfb9&s=${id}`);
+  const filmsData = await films.json();
+  const filmsDataHTML = filmsData.Search.map(
+    (film) =>
+      `<div class="film-wrapper">
         <figure class="film-poster-wrapper">
           <img
             class="film-poster"
@@ -75,9 +73,13 @@ async function OnSearchChange(event){
           </div>
         </div>
       </div>`
-      ).join("");
-      const filmList = document.querySelector(".films-list");
-      filmList.innerHTML = filmsDataHTML;
-      
+  ).join("");
+  const filmList = document.querySelector(".films-list");
+  filmList.innerHTML = filmsDataHTML;
 }
-OnSearchChange()
+OnSearchChange();
+
+function sortNewest() {
+  
+}
+sortNewest();

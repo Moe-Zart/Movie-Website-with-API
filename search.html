@@ -46,9 +46,16 @@
     </header>
     <div class="loading-bar"></div>
     <main>
+
       <section id="main-page">
         <div class="row-search">
-          <div class="filters-search"></div>
+          <div class="filters-search">
+            <select name="" id="filter">
+              <option value="" disabled selected>Sort by</option>
+              <option value="Newest" onclick="sortNewest()">Newest</option>
+              <option value="Oldest">Oldest</option>
+            </select>
+          </div>
           <div class="films-list"></div>
         </div>
       </section>
