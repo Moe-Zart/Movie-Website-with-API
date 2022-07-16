@@ -22,7 +22,7 @@
 async function renderFilms(targetValue) {
   //note: the targetValue is only for the sort
   const films = await fetch(
-    `https://www.omdbapi.com/?apikey=3d6ecfb9&s=%22here%22`
+    "https://www.omdbapi.com/?apikey=3d6ecfb9&s=%22here%22"
   );
   const filmsData = await films.json();
   //Sort by year v
@@ -59,7 +59,7 @@ renderFilms();
 
 async function OnSearchChange(event) {
   const id = event.target.value;
-  const films = await fetch(`https:www.omdbapi.com/?apikey=3d6ecfb9&s=${id}`);
+  const films = await fetch(`https://www.omdbapi.com/?apikey=3d6ecfb9&s=${id}`);
   const filmsData = await films.json();
   const filmsDataHTML = filmsData.Search.map(
     (film) =>
